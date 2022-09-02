@@ -4,6 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>RnCore.Logging</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>6.0.0</Version>
+    <Company>Richard Niemand</Company>
+    <Description>Simple wrapper for Microsoft.Extensions.Logging.Abstractions</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Richard Niemand</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <ProjectGuid>9B027196-E8B3-4718-8893-FF06733D6A6E</ProjectGuid>
   </PropertyGroup>
 
   <ItemGroup>
