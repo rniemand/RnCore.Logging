@@ -1,6 +1,14 @@
 Put simply, `RnCore.Logging` is a simple wrapper for the `ILogger<T>` interface found in [Microsoft.Extensions.Logging.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions) which makes testing logging a lot simpler.
 
-## Registration
+View [RnCore.Logging on NuGet](https://www.nuget.org/packages/RnCore.Logging/), or browse the [source code on GitHub](https://github.com/rniemand/RnCore.Logging).
+
+## Installation
+
+```shell
+PM> Install-Package RnCore.Logging
+```
+
+## Wrapper Registration
 
 ```cs
 public static IServiceCollection AddLogging(this IServiceCollection services) =>

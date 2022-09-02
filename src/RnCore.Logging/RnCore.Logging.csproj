@@ -13,6 +13,7 @@
     <Authors>Richard Niemand</Authors>
     <NeutralLanguage>en</NeutralLanguage>
     <ProjectGuid>9B027196-E8B3-4718-8893-FF06733D6A6E</ProjectGuid>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
