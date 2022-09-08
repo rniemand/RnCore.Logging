@@ -1,4 +1,8 @@
 - [Home](./)
-- [Development](./development.md)
+- **Usage**
+  - [Configuration](./configuration.md)
+  - [Installation](./installation.md)
+  - [Registration](./registration.md)
+  - [Usage](./usage.md)
+- **External**
 - [External Projects](./external-projects.md)
-- [Docsify Info](./docsify.md)

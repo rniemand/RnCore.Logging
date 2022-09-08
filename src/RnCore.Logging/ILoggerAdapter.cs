@@ -1,6 +1,8 @@
+using Microsoft.Extensions.Logging;
+
 namespace RnCore.Logging;
 
-public interface ILoggerAdapter<out T>
+public interface ILoggerAdapter : ILogger
 {
   void LogTrace(string? message, params object?[] args);
   void LogTrace(Exception? exception, string? message, params object?[] args);
@@ -17,3 +19,5 @@ public interface ILoggerAdapter<out T>
   void LogError(string? message, params object?[] args);
   void LogError(Exception? exception, string? message, params object?[] args);
 }
+
+public interface ILoggerAdapter<out T> : ILoggerAdapter { }
