@@ -1,17 +1,18 @@
 using Microsoft.Extensions.Logging;
+using System.Diagnostics.CodeAnalysis;
 
 namespace RnCore.Logging;
 
-public class LoggerAdapter<T> : ILoggerAdapter<T>
+[ExcludeFromCodeCoverage]
+public class LoggerAdapter : ILoggerAdapter
 {
-  private readonly ILogger<T> _logger;
+  private readonly ILogger _logger;
 
-  public LoggerAdapter(ILogger<T> logger)
+  public LoggerAdapter(ILogger logger)
   {
     _logger = logger;
   }
 
-  // Trace
   public void LogTrace(string? message, params object?[] args)
   {
     if (!_logger.IsEnabled(LogLevel.Trace))
@@ -28,7 +29,6 @@ public class LoggerAdapter<T> : ILoggerAdapter<T>
     _logger.LogTrace(exception, message, args);
   }
 
-  // Debug
   public void LogDebug(string? message, params object?[] args)
   {
     if (!_logger.IsEnabled(LogLevel.Debug))
@@ -45,7 +45,6 @@ public class LoggerAdapter<T> : ILoggerAdapter<T>
     _logger.LogDebug(exception, message, args);
   }
 
-  // Information
   public void LogInformation(string? message, params object?[] args)
   {
     if (!_logger.IsEnabled(LogLevel.Information))
@@ -62,7 +61,6 @@ public class LoggerAdapter<T> : ILoggerAdapter<T>
     _logger.LogInformation(exception, message, args);
   }
 
-  // Warning
   public void LogWarning(string? message, params object?[] args)
   {
     if (!_logger.IsEnabled(LogLevel.Warning))
@@ -79,7 +77,6 @@ public class LoggerAdapter<T> : ILoggerAdapter<T>
     _logger.LogWarning(exception, message, args);
   }
 
-  // Error
   public void LogError(string? message, params object?[] args)
   {
     if (!_logger.IsEnabled(LogLevel.Error))
@@ -95,4 +92,21 @@ public class LoggerAdapter<T> : ILoggerAdapter<T>
 
     _logger.LogError(exception, message, args);
   }
+  
+  public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) =>
+    _logger.Log(logLevel, eventId, state, exception, formatter);
+
+  public bool IsEnabled(LogLevel logLevel) =>
+    _logger.IsEnabled(logLevel);
+
+  public IDisposable BeginScope<TState>(TState state) =>
+    _logger.BeginScope(state);
+}
+
+[ExcludeFromCodeCoverage]
+public class LoggerAdapter<T> : LoggerAdapter, ILoggerAdapter<T>
+{
+  public LoggerAdapter(ILogger<T> logger)
+    : base(logger)
+  { }
 }
