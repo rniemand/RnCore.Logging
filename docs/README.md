@@ -1,36 +1,21 @@
-Put simply, `RnCore.Logging` is a simple wrapper for the `ILogger<T>` interface found in [Microsoft.Extensions.Logging.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions) which makes testing logging a lot simpler.
+# RnCore.Logging
 
-View [RnCore.Logging on NuGet](https://www.nuget.org/packages/RnCore.Logging/), or browse the [source code on GitHub](https://github.com/rniemand/RnCore.Logging).
+Put simply, `RnCore.Logging` is a simple wrapper for the `ILogger<T>` interface found in **[Microsoft.Extensions.Logging.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions)** which makes testing logging a lot simpler.
 
-## Installation
+## Source Code
+You can view the source code **[on GitHub](https://github.com/rniemand/RnCore.Logging)**, or by clicking the link in the top right corner.
 
-```shell
-PM> Install-Package RnCore.Logging
+## NuGet
+You can install `RnCore.Logging` via **[NuGet](https://www.nuget.org/packages/RnCore.Logging/)** by running:
+
+```powershell
+Install-Package RnCore.Logging
 ```
 
-## Wrapper Registration
+## Getting Started
+Follow the steps below to get started with `RnCore.Logging`:
 
-```cs
-public static IServiceCollection AddLogging(this IServiceCollection services) =>
-  services.AddSingleton(typeof(ILoggerAdapter<>), typeof(LoggerAdapter<>));
-```
-
-## Sample Usage
-
-```cs
-class MyClass {
-  private readonly ILoggerAdapter<MyClass> _logger;
-
-  public MyClass(ILoggerAdapter<MyClass> logger) {
-    _logger = logger;
-  }
-
-  public void Foo() {
-    _logger.LogInformation("Hello World!");
-  }
-}
-```
-
-## Configuration
-
-Nothing special, just use the default logging configuration as this is just a wrapping class.
+- [Install](./installation.md) `RnCore.Logging` via NuGet.
+- [Configure](./configuration.md) logging as per normal.
+- [Register](./registration.md) `ILoggerAdapter` with your DI container.
+- [Start Logging](./usage.md) your messages!
