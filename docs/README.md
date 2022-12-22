@@ -2,6 +2,8 @@
 
 Put simply, `RnCore.Logging` is a simple wrapper for the `ILogger<T>` interface found in **[Microsoft.Extensions.Logging.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions)** which makes testing logging a lot simpler.
 
+> Current version: **6.0.0.103**
+
 ## Source Code
 You can view the source code **[on GitHub](https://github.com/rniemand/RnCore.Logging)**, or by clicking the link in the top right corner.
 
