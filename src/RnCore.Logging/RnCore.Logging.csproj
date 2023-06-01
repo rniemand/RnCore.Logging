@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>RnCore.Logging</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>6.0.0.104</Version>
+    <Version>6.0.0.105</Version>
     <Company>Richard Niemand</Company>
     <Description>Simple wrapper for Microsoft.Extensions.Logging.Abstractions</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
